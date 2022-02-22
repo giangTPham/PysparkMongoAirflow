@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#datalake
+Final_Project/data/datalake/
+
+#ipynb
+*.ipynb
