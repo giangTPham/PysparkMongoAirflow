@@ -133,3 +133,6 @@ Final_Project/data/datalake/
 
 #ipynb
 *.ipynb
+
+#mongodb
+*.mongodb
