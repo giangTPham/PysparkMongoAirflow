@@ -11,7 +11,7 @@ spark = SparkSession.builder.\
         config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.12:3.0.0").\
         getOrCreate()
 
-date = '2021-11-01'
+date = '2021-11-03'
 # date = input("enter date: ")
 des_user = "../PysparkMongoAirflow/Final_Project/data/datalake/"+date+"/user/*.parquet"
 
@@ -26,17 +26,17 @@ users_db = spark.read\
         .format("mongo")\
         .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
         .option("database", 'test') \
-        .option("collection", "demograhic") \
-        .load() \
-        .select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').cache()
+        .option("collection", "demographic") \
+        .load().cache()
 database_count = users_db.count()
 if database_count == 0:
         print('count = 0')
         data.write.format("mongo")\
             .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
             .option("database", 'test').mode("overwrite")\
-            .option("collection", "demograhic").save()
+            .option("collection", "demographic").save()
 else: 
+        users_db = users_db.select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').cache()
         all_data = data.unionAll(users_db).cache()
         final_result =all_data.withColumn('row', row_number().over(windowSpec)).filter(col("row") == 1) \
             .select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').orderBy('userid') \

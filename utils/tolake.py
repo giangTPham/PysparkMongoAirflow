@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession, Window
 
 if __name__ == '__main__':
     spark = SparkSession.builder.master("local[1]").appName("finalProject").getOrCreate()
-    date = '2021-11-01'
+    date = '2021-11-03'
     # date = input("enter date: ")
     source = "../PysparkMongoAirflow/Final_Project/data/"
 
