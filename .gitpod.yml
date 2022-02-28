@@ -1,14 +1,6 @@
 image:
-  file: .gitpod.Dockerfile
-tasks:
-    - init: echo "Replace me with a build script for the project."
-      command: mkdir -p /workspace/data && mongod --dbpath /workspace/data --fork --logpath /workspace/data/mongod.log
-    - init: |
-        npm install
-        gp sync-done installation
-      command: npm run server
-    - init: gp sync-await installation
-      command: npm run client
+  file: .gitpod.dockerfile
+
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
