@@ -5,8 +5,8 @@ from datetime import datetime
 from pyspark.sql import SparkSession, Window
 
 spark = SparkSession.builder.\
-        appName("pyspark-notebook2").\
-        config("spark.mongodb.input.uri","mongodb://admin:admin@127.0.0.1:27017/test.demographic").\
+        appName("pyspark-notebook2").\mongodb://admin:admin@127.0.0.1:27017/test.demographi
+        config("spark.mongodb.input.uri","c").\
         config("spark.mongodb.output.uri","mongodb://admin:admin@127.0.0.1:27017/test.demographic").\
         config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.12:3.0.0").\
         getOrCreate()

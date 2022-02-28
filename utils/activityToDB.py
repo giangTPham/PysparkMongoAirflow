@@ -54,7 +54,7 @@ def updateToDB(date):
     if transaction_activities.first()['modifiedDate'] <= full_activities.first()['modifiedDate']:
         print("Bye")
         return
-    
+    spark.stop()
 
     combination = full_activities.union(transaction_activities).cache()
     window_combine = Window.partitionBy('userId').orderBy("lastActiveTransactionType").rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
