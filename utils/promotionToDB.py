@@ -41,7 +41,7 @@ def updateToDB(date):
 
     if database_count == 0:
         print('count = 0')
-        data.write.format("mongo")\
+        data_up.write.format("mongo")\
             .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
             .option("database", 'test').mode("overwrite")\
             .option("collection", "promotions").save()
