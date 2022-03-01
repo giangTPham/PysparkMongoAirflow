@@ -46,8 +46,8 @@ def updateToDB(date):
             .option("database", 'test').mode("overwrite")\
             .option("collection", "promotions").save()
     else: 
-        users_db = users_db.select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').cache()
-        all_data = data.unionAll(users_db).cache()
+        data_db = data_db.select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').cache()
+        all_data = data.unionAll(data_db).cache()
         final_result =all_data.withColumn('row', row_number().over(windowSpec)).filter(col("row") == 1) \
             .select('userid', 'voucherCode', 'status', 'campaignID', 'time', 'campaignType', 'expireDate', 'expireTime', 'getnow', 'updated_time').orderBy('userid') \
             .cache()
