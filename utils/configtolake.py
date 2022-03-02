@@ -12,5 +12,5 @@ if __name__ == '__main__':
                         .csv(source + "source/configs/*.csv").cache()
     
 
-    promotion.write.parquet(source+"datalake/configs")
+    config.write.parquet(source+"datalake/configs")
    
