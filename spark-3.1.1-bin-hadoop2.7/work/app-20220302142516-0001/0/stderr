@@ -1,0 +1,19 @@
+Spark Executor Command: "/home/gitpod/.sdkman/candidates/java/current/bin/java" "-cp" "/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/conf/:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/*" "-Xmx1024M" "-Dspark.driver.port=38881" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.0.2.100:38881" "--executor-id" "0" "--hostname" "10.0.2.100" "--cores" "1" "--app-id" "app-20220302142516-0001" "--worker-url" "spark://Worker@10.0.2.100:42611"
+========================================
+
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/03/02 14:25:17 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 4112@giangtpham-pysparkmongoa-8e4ves7r5or
+22/03/02 14:25:17 INFO SignalUtils: Registering signal handler for TERM
+22/03/02 14:25:17 INFO SignalUtils: Registering signal handler for HUP
+22/03/02 14:25:17 INFO SignalUtils: Registering signal handler for INT
+22/03/02 14:25:17 WARN Utils: Your hostname, giangtpham-pysparkmongoa-8e4ves7r5or resolves to a loopback address: 127.0.0.1; using 10.0.2.100 instead (on interface tap0)
+22/03/02 14:25:17 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/02 14:25:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/03/02 14:25:18 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+ry for your platform... using builtin-java classes where applicable

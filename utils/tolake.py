@@ -4,10 +4,10 @@ from pyspark.sql.types import *
 from pyspark.sql import SparkSession, Window
 
 if __name__ == '__main__':
-    spark = SparkSession.builder.master("local[1]").appName("finalProject").getOrCreate()
-    date = '2021-11-03'
+    spark = SparkSession.builder.master("spark://giangtpham-pysparkmongoa-8e4ves7r5or:7077").appName("finalProject-sp-af").getOrCreate()
+    date = '2021-11-05'
     # date = input("enter date: ")
-    source = "../PysparkMongoAirflow/Final_Project/data/"
+    source = "/workspace/PysparkMongoAirflow/Final_Project/data/"
 
     promotion = spark.read.option("header", True).option("inferSchema", True).option("delimiter", '\t') \
                         .csv(source + "source/promotions/"+date+"/*.csv").cache()

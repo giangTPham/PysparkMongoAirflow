@@ -1,0 +1,57 @@
+Spark Executor Command: "/home/gitpod/.sdkman/candidates/java/current/bin/java" "-cp" "/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/conf/:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/*" "-Xmx1024M" "-Dspark.driver.port=41263" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.0.2.100:41263" "--executor-id" "0" "--hostname" "10.0.2.100" "--cores" "1" "--app-id" "app-20220302154505-0012" "--worker-url" "spark://Worker@10.0.2.100:42611"
+========================================
+
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/03/02 15:45:06 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 27850@giangtpham-pysparkmongoa-8e4ves7r5or
+22/03/02 15:45:06 INFO SignalUtils: Registering signal handler for TERM
+22/03/02 15:45:06 INFO SignalUtils: Registering signal handler for HUP
+22/03/02 15:45:06 INFO SignalUtils: Registering signal handler for INT
+22/03/02 15:45:07 WARN Utils: Your hostname, giangtpham-pysparkmongoa-8e4ves7r5or resolves to a loopback address: 127.0.0.1; using 10.0.2.100 instead (on interface tap0)
+22/03/02 15:45:07 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/02 15:45:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/03/02 15:45:07 INFO SecurityManager: Changing view acls to: gitpod
+22/03/02 15:45:07 INFO SecurityManager: Changing modify acls to: gitpod
+22/03/02 15:45:07 INFO SecurityManager: Changing view acls groups to: 
+22/03/02 15:45:07 INFO SecurityManager: Changing modify acls groups to: 
+22/03/02 15:45:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gitpod); groups with view permissions: Set(); users  with modify permissions: Set(gitpod); groups with modify permissions: Set()
+22/03/02 15:45:07 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:41263 after 108 ms (0 ms spent in bootstraps)
+22/03/02 15:45:08 INFO SecurityManager: Changing view acls to: gitpod
+22/03/02 15:45:08 INFO SecurityManager: Changing modify acls to: gitpod
+22/03/02 15:45:08 INFO SecurityManager: Changing view acls groups to: 
+22/03/02 15:45:08 INFO SecurityManager: Changing modify acls groups to: 
+22/03/02 15:45:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gitpod); groups with view permissions: Set(); users  with modify permissions: Set(gitpod); groups with modify permissions: Set()
+22/03/02 15:45:08 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:41263 after 3 ms (0 ms spent in bootstraps)
+22/03/02 15:45:08 INFO DiskBlockManager: Created local directory at /tmp/spark-9ace12ef-410e-4cab-9863-b48d9b48c8c1/executor-688fea31-78cc-4783-96e9-ae7ce0bcfd18/blockmgr-4bbcaf66-72a9-41f5-b241-df49a9904df8
+22/03/02 15:45:08 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+22/03/02 15:45:08 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.0.2.100:41263
+22/03/02 15:45:08 INFO WorkerWatcher: Connecting to worker spark://Worker@10.0.2.100:42611
+22/03/02 15:45:08 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:42611 after 2 ms (0 ms spent in bootstraps)
+22/03/02 15:45:08 INFO WorkerWatcher: Successfully connected to spark://Worker@10.0.2.100:42611
+22/03/02 15:45:08 INFO ResourceUtils: ==============================================================
+22/03/02 15:45:08 INFO ResourceUtils: No custom resources configured for spark.executor.
+22/03/02 15:45:08 INFO ResourceUtils: ==============================================================
+22/03/02 15:45:08 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+22/03/02 15:45:08 INFO Executor: Starting executor ID 0 on host 10.0.2.100
+22/03/02 15:45:08 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35187.
+22/03/02 15:45:08 INFO NettyBlockTransferService: Server created on 10.0.2.100:35187
+22/03/02 15:45:08 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/03/02 15:45:08 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.0.2.100, 35187, None)
+22/03/02 15:45:08 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.0.2.100, 35187, None)
+22/03/02 15:45:08 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.0.2.100, 35187, None)
+22/03/02 15:45:08 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+22/03/02 15:45:08 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/03/02 15:45:08 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+22/03/02 15:45:08 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:39309 after 2 ms (0 ms spent in bootstraps)
+22/03/02 15:45:09 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 26.4 KiB, free 434.4 MiB)
+22/03/02 15:45:09 INFO TorrentBroadcast: Reading broadcast variable 0 took 134 ms
+22/03/02 15:45:09 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 73.6 KiB, free 434.3 MiB)
+22/03/02 15:45:09 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1910 bytes result sent to driver
+22/03/02 15:45:11 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+22/03/02 15:45:11 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

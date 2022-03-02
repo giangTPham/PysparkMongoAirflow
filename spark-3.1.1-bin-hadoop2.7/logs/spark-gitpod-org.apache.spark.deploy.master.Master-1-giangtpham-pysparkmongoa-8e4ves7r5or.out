@@ -1,0 +1,141 @@
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Spark Command: /home/gitpod/.sdkman/candidates/java/current/bin/java -cp /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/conf/:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host giangtpham-pysparkmongoa-8e4ves7r5or --port 7077 --webui-port 8080
+========================================
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/03/02 14:18:55 INFO Master: Started daemon with process name: 1924@giangtpham-pysparkmongoa-8e4ves7r5or
+22/03/02 14:18:55 INFO SignalUtils: Registering signal handler for TERM
+22/03/02 14:18:55 INFO SignalUtils: Registering signal handler for HUP
+22/03/02 14:18:55 INFO SignalUtils: Registering signal handler for INT
+22/03/02 14:18:55 WARN Utils: Your hostname, giangtpham-pysparkmongoa-8e4ves7r5or resolves to a loopback address: 127.0.0.1; using 10.0.2.100 instead (on interface tap0)
+22/03/02 14:18:55 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/02 14:18:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/03/02 14:18:56 INFO SecurityManager: Changing view acls to: gitpod
+22/03/02 14:18:56 INFO SecurityManager: Changing modify acls to: gitpod
+22/03/02 14:18:56 INFO SecurityManager: Changing view acls groups to: 
+22/03/02 14:18:56 INFO SecurityManager: Changing modify acls groups to: 
+22/03/02 14:18:56 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gitpod); groups with view permissions: Set(); users  with modify permissions: Set(gitpod); groups with modify permissions: Set()
+22/03/02 14:18:56 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+22/03/02 14:18:56 INFO Master: Starting Spark master at spark://giangtpham-pysparkmongoa-8e4ves7r5or:7077
+22/03/02 14:18:56 INFO Master: Running Spark version 3.1.1
+22/03/02 14:18:56 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+22/03/02 14:18:56 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://10.0.2.100:8080
+22/03/02 14:18:57 INFO Master: I have been elected leader! New state: ALIVE
+22/03/02 14:19:23 INFO Master: Registering worker 10.0.2.100:42611 with 1 cores, 1024.0 MiB RAM
+22/03/02 14:22:13 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:22:13 INFO Master: Registered app pyspark-notebook2 with ID app-20220302142213-0000
+22/03/02 14:22:13 INFO Master: Launching executor app-20220302142213-0000/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:22:19 INFO Master: Received unregister request from application app-20220302142213-0000
+22/03/02 14:22:19 INFO Master: Removing app app-20220302142213-0000
+22/03/02 14:22:19 INFO Master: 127.0.0.1:58680 got disassociated, removing it.
+22/03/02 14:22:19 INFO Master: 10.0.2.100:36661 got disassociated, removing it.
+22/03/02 14:22:19 WARN Master: Got status update for unknown executor app-20220302142213-0000/0
+22/03/02 14:25:16 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:25:16 INFO Master: Registered app pyspark-notebook2 with ID app-20220302142516-0001
+22/03/02 14:25:16 INFO Master: Launching executor app-20220302142516-0001/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:25:18 INFO Master: Received unregister request from application app-20220302142516-0001
+22/03/02 14:25:18 INFO Master: Removing app app-20220302142516-0001
+22/03/02 14:25:18 INFO Master: 127.0.0.1:59082 got disassociated, removing it.
+22/03/02 14:25:18 INFO Master: 10.0.2.100:38881 got disassociated, removing it.
+22/03/02 14:25:18 WARN Master: Got status update for unknown executor app-20220302142516-0001/0
+22/03/02 14:27:56 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:27:56 INFO Master: Registered app pyspark-notebook2 with ID app-20220302142756-0002
+22/03/02 14:27:56 INFO Master: Launching executor app-20220302142756-0002/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:28:03 INFO Master: Received unregister request from application app-20220302142756-0002
+22/03/02 14:28:03 INFO Master: Removing app app-20220302142756-0002
+22/03/02 14:28:03 INFO Master: 127.0.0.1:59428 got disassociated, removing it.
+22/03/02 14:28:03 INFO Master: 10.0.2.100:41695 got disassociated, removing it.
+22/03/02 14:28:03 WARN Master: Got status update for unknown executor app-20220302142756-0002/0
+22/03/02 14:36:31 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:36:31 INFO Master: Registered app pyspark-notebook2 with ID app-20220302143631-0003
+22/03/02 14:36:31 INFO Master: Launching executor app-20220302143631-0003/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:36:37 INFO Master: Received unregister request from application app-20220302143631-0003
+22/03/02 14:36:37 INFO Master: Removing app app-20220302143631-0003
+22/03/02 14:36:37 INFO Master: 127.0.0.1:60536 got disassociated, removing it.
+22/03/02 14:36:37 INFO Master: 10.0.2.100:37079 got disassociated, removing it.
+22/03/02 14:36:37 WARN Master: Got status update for unknown executor app-20220302143631-0003/0
+22/03/02 14:40:26 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:40:26 INFO Master: Registered app pyspark-notebook2 with ID app-20220302144026-0004
+22/03/02 14:40:26 INFO Master: Launching executor app-20220302144026-0004/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:40:32 INFO Master: Received unregister request from application app-20220302144026-0004
+22/03/02 14:40:32 INFO Master: Removing app app-20220302144026-0004
+22/03/02 14:40:32 INFO Master: 127.0.0.1:32814 got disassociated, removing it.
+22/03/02 14:40:32 INFO Master: 10.0.2.100:36715 got disassociated, removing it.
+22/03/02 14:40:32 WARN Master: Got status update for unknown executor app-20220302144026-0004/0
+22/03/02 14:50:01 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:50:01 INFO Master: Registered app pyspark-notebook2 with ID app-20220302145001-0005
+22/03/02 14:50:01 INFO Master: Launching executor app-20220302145001-0005/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:50:32 INFO Master: Received unregister request from application app-20220302145001-0005
+22/03/02 14:50:32 INFO Master: Removing app app-20220302145001-0005
+22/03/02 14:50:32 INFO Master: 127.0.0.1:34030 got disassociated, removing it.
+22/03/02 14:50:32 INFO Master: 10.0.2.100:35267 got disassociated, removing it.
+22/03/02 14:50:32 WARN Master: Got status update for unknown executor app-20220302145001-0005/0
+22/03/02 14:52:25 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:52:25 INFO Master: Registered app pyspark-notebook2 with ID app-20220302145225-0006
+22/03/02 14:52:25 INFO Master: Launching executor app-20220302145225-0006/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:52:31 INFO Master: Received unregister request from application app-20220302145225-0006
+22/03/02 14:52:31 INFO Master: Removing app app-20220302145225-0006
+22/03/02 14:52:31 INFO Master: 127.0.0.1:34326 got disassociated, removing it.
+22/03/02 14:52:31 INFO Master: 10.0.2.100:38941 got disassociated, removing it.
+22/03/02 14:52:31 WARN Master: Got status update for unknown executor app-20220302145225-0006/0
+22/03/02 14:54:49 INFO Master: Registering app pyspark-notebook2
+22/03/02 14:54:49 INFO Master: Registered app pyspark-notebook2 with ID app-20220302145449-0007
+22/03/02 14:54:49 INFO Master: Launching executor app-20220302145449-0007/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 14:55:14 INFO Master: Received unregister request from application app-20220302145449-0007
+22/03/02 14:55:14 INFO Master: Removing app app-20220302145449-0007
+22/03/02 14:55:14 INFO Master: 127.0.0.1:34642 got disassociated, removing it.
+22/03/02 14:55:14 INFO Master: 10.0.2.100:44265 got disassociated, removing it.
+22/03/02 14:55:14 WARN Master: Got status update for unknown executor app-20220302145449-0007/0
+22/03/02 15:13:25 INFO Master: Registering app pyspark-notebook2
+22/03/02 15:13:25 INFO Master: Registered app pyspark-notebook2 with ID app-20220302151325-0008
+22/03/02 15:13:25 INFO Master: Launching executor app-20220302151325-0008/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 15:13:26 INFO Master: Received unregister request from application app-20220302151325-0008
+22/03/02 15:13:26 INFO Master: Removing app app-20220302151325-0008
+22/03/02 15:13:26 WARN Master: Got status update for unknown executor app-20220302151325-0008/0
+22/03/02 15:13:26 INFO Master: 127.0.0.1:36988 got disassociated, removing it.
+22/03/02 15:13:26 INFO Master: 10.0.2.100:36165 got disassociated, removing it.
+22/03/02 15:16:08 INFO Master: Registering app pyspark-notebook2
+22/03/02 15:16:08 INFO Master: Registered app pyspark-notebook2 with ID app-20220302151608-0009
+22/03/02 15:16:08 INFO Master: Launching executor app-20220302151608-0009/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 15:16:09 INFO Master: Received unregister request from application app-20220302151608-0009
+22/03/02 15:16:09 INFO Master: Removing app app-20220302151608-0009
+22/03/02 15:16:09 INFO Master: 127.0.0.1:37330 got disassociated, removing it.
+22/03/02 15:16:09 INFO Master: 10.0.2.100:45299 got disassociated, removing it.
+22/03/02 15:16:09 WARN Master: Got status update for unknown executor app-20220302151608-0009/0
+22/03/02 15:25:09 INFO Master: Registering app pyspark-notebook2
+22/03/02 15:25:09 INFO Master: Registered app pyspark-notebook2 with ID app-20220302152509-0010
+22/03/02 15:25:09 INFO Master: Launching executor app-20220302152509-0010/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 15:25:11 INFO Master: Received unregister request from application app-20220302152509-0010
+22/03/02 15:25:11 INFO Master: Removing app app-20220302152509-0010
+22/03/02 15:25:11 WARN Master: Got status update for unknown executor app-20220302152509-0010/0
+22/03/02 15:25:11 INFO Master: 127.0.0.1:38500 got disassociated, removing it.
+22/03/02 15:25:11 INFO Master: 10.0.2.100:44421 got disassociated, removing it.
+22/03/02 15:33:05 INFO Master: Registering app pyspark-notebook2
+22/03/02 15:33:05 INFO Master: Registered app pyspark-notebook2 with ID app-20220302153305-0011
+22/03/02 15:33:05 INFO Master: Launching executor app-20220302153305-0011/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 15:33:07 INFO Master: Received unregister request from application app-20220302153305-0011
+22/03/02 15:33:07 INFO Master: Removing app app-20220302153305-0011
+22/03/02 15:33:07 INFO Master: 127.0.0.1:39524 got disassociated, removing it.
+22/03/02 15:33:07 INFO Master: 10.0.2.100:44473 got disassociated, removing it.
+22/03/02 15:33:07 WARN Master: Got status update for unknown executor app-20220302153305-0011/0
+22/03/02 15:45:05 INFO Master: Registering app pyspark-notebook2
+22/03/02 15:45:05 INFO Master: Registered app pyspark-notebook2 with ID app-20220302154505-0012
+22/03/02 15:45:05 INFO Master: Launching executor app-20220302154505-0012/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 15:45:11 INFO Master: Received unregister request from application app-20220302154505-0012
+22/03/02 15:45:11 INFO Master: Removing app app-20220302154505-0012
+22/03/02 15:45:11 INFO Master: 127.0.0.1:41056 got disassociated, removing it.
+22/03/02 15:45:11 INFO Master: 10.0.2.100:41263 got disassociated, removing it.
+22/03/02 15:45:11 WARN Master: Got status update for unknown executor app-20220302154505-0012/0
+22/03/02 15:51:45 INFO Master: Registering app pyspark-notebook2
+22/03/02 15:51:45 INFO Master: Registered app pyspark-notebook2 with ID app-20220302155145-0013
+22/03/02 15:51:45 INFO Master: Launching executor app-20220302155145-0013/0 on worker worker-20220302141922-10.0.2.100-42611
+22/03/02 15:52:15 INFO Master: Received unregister request from application app-20220302155145-0013
+22/03/02 15:52:15 INFO Master: Removing app app-20220302155145-0013
+22/03/02 15:52:15 INFO Master: 127.0.0.1:41920 got disassociated, removing it.
+22/03/02 15:52:15 INFO Master: 10.0.2.100:36889 got disassociated, removing it.
+22/03/02 15:52:15 WARN Master: Got status update for unknown executor app-20220302155145-0013/0

@@ -1,0 +1,139 @@
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Spark Command: /home/gitpod/.sdkman/candidates/java/current/bin/java -cp /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/conf/:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host giangtpham-pysparkmongoa-8e4ves7r5or --port 7077 --webui-port 8080
+========================================
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/03/02 07:02:25 INFO Master: Started daemon with process name: 2700@giangtpham-pysparkmongoa-8e4ves7r5or
+22/03/02 07:02:25 INFO SignalUtils: Registering signal handler for TERM
+22/03/02 07:02:25 INFO SignalUtils: Registering signal handler for HUP
+22/03/02 07:02:25 INFO SignalUtils: Registering signal handler for INT
+22/03/02 07:02:25 WARN Utils: Your hostname, giangtpham-pysparkmongoa-8e4ves7r5or resolves to a loopback address: 127.0.0.1; using 10.0.2.100 instead (on interface tap0)
+22/03/02 07:02:25 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/02 07:02:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/03/02 07:02:26 INFO SecurityManager: Changing view acls to: gitpod
+22/03/02 07:02:26 INFO SecurityManager: Changing modify acls to: gitpod
+22/03/02 07:02:26 INFO SecurityManager: Changing view acls groups to: 
+22/03/02 07:02:26 INFO SecurityManager: Changing modify acls groups to: 
+22/03/02 07:02:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gitpod); groups with view permissions: Set(); users  with modify permissions: Set(gitpod); groups with modify permissions: Set()
+22/03/02 07:02:26 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+22/03/02 07:02:26 INFO Master: Starting Spark master at spark://giangtpham-pysparkmongoa-8e4ves7r5or:7077
+22/03/02 07:02:26 INFO Master: Running Spark version 3.1.1
+22/03/02 07:02:26 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+22/03/02 07:02:26 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://10.0.2.100:8080
+22/03/02 07:02:27 INFO Master: I have been elected leader! New state: ALIVE
+22/03/02 07:02:37 WARN TransportChannelHandler: Exception in connection from /127.0.0.1:51794
+java.lang.IllegalArgumentException: Too large frame: 5135603447292250188
+	at org.sparkproject.guava.base.Preconditions.checkArgument(Preconditions.java:119)
+	at org.apache.spark.network.util.TransportFrameDecoder.decodeNext(TransportFrameDecoder.java:148)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:98)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+22/03/02 07:02:37 INFO Master: 127.0.0.1:51794 got disassociated, removing it.
+22/03/02 07:04:15 INFO Master: Registering worker 10.0.2.100:36917 with 1 cores, 1024.0 MiB RAM
+22/03/02 07:05:44 INFO Master: Registering app PythonPi
+22/03/02 07:05:44 INFO Master: Registered app PythonPi with ID app-20220302070544-0000
+22/03/02 07:05:44 INFO Master: Launching executor app-20220302070544-0000/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:05:48 INFO Master: Received unregister request from application app-20220302070544-0000
+22/03/02 07:05:48 INFO Master: Removing app app-20220302070544-0000
+22/03/02 07:05:48 INFO Master: 127.0.0.1:51798 got disassociated, removing it.
+22/03/02 07:05:48 INFO Master: 10.0.2.100:37441 got disassociated, removing it.
+22/03/02 07:05:48 WARN Master: Got status update for unknown executor app-20220302070544-0000/0
+22/03/02 07:18:01 INFO Master: Registering app PythonPi
+22/03/02 07:18:01 INFO Master: Registered app PythonPi with ID app-20220302071801-0001
+22/03/02 07:18:01 INFO Master: Launching executor app-20220302071801-0001/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:18:05 INFO Master: Received unregister request from application app-20220302071801-0001
+22/03/02 07:18:05 INFO Master: Removing app app-20220302071801-0001
+22/03/02 07:18:05 INFO Master: 127.0.0.1:51800 got disassociated, removing it.
+22/03/02 07:18:05 INFO Master: 10.0.2.100:38869 got disassociated, removing it.
+22/03/02 07:18:05 WARN Master: Got status update for unknown executor app-20220302071801-0001/0
+22/03/02 07:39:28 INFO Master: Registering app finalProject
+22/03/02 07:39:28 INFO Master: Registered app finalProject with ID app-20220302073928-0002
+22/03/02 07:39:28 INFO Master: Launching executor app-20220302073928-0002/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:39:30 INFO Master: Received unregister request from application app-20220302073928-0002
+22/03/02 07:39:30 INFO Master: Removing app app-20220302073928-0002
+22/03/02 07:39:30 WARN Master: Got status update for unknown executor app-20220302073928-0002/0
+22/03/02 07:39:30 INFO Master: 127.0.0.1:51804 got disassociated, removing it.
+22/03/02 07:39:30 INFO Master: 10.0.2.100:32819 got disassociated, removing it.
+22/03/02 07:42:16 INFO Master: Registering app finalProject
+22/03/02 07:42:16 INFO Master: Registered app finalProject with ID app-20220302074216-0003
+22/03/02 07:42:16 INFO Master: Launching executor app-20220302074216-0003/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:42:26 INFO Master: Received unregister request from application app-20220302074216-0003
+22/03/02 07:42:26 INFO Master: Removing app app-20220302074216-0003
+22/03/02 07:42:26 INFO Master: 127.0.0.1:51806 got disassociated, removing it.
+22/03/02 07:42:26 INFO Master: 10.0.2.100:36171 got disassociated, removing it.
+22/03/02 07:42:26 WARN Master: Got status update for unknown executor app-20220302074216-0003/0
+22/03/02 07:45:08 INFO Master: Registering app finalProject
+22/03/02 07:45:08 INFO Master: Registered app finalProject with ID app-20220302074508-0004
+22/03/02 07:45:08 INFO Master: Launching executor app-20220302074508-0004/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:45:16 INFO Master: Received unregister request from application app-20220302074508-0004
+22/03/02 07:45:16 INFO Master: Removing app app-20220302074508-0004
+22/03/02 07:45:16 INFO Master: 127.0.0.1:51808 got disassociated, removing it.
+22/03/02 07:45:16 INFO Master: 10.0.2.100:35149 got disassociated, removing it.
+22/03/02 07:45:16 WARN Master: Got status update for unknown executor app-20220302074508-0004/0
+22/03/02 07:47:13 INFO Master: Registering app finalProject-sp
+22/03/02 07:47:13 INFO Master: Registered app finalProject-sp with ID app-20220302074713-0005
+22/03/02 07:47:13 INFO Master: Launching executor app-20220302074713-0005/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:47:22 INFO Master: Received unregister request from application app-20220302074713-0005
+22/03/02 07:47:22 INFO Master: Removing app app-20220302074713-0005
+22/03/02 07:47:22 INFO Master: 127.0.0.1:51810 got disassociated, removing it.
+22/03/02 07:47:22 INFO Master: 10.0.2.100:37711 got disassociated, removing it.
+22/03/02 07:47:22 WARN Master: Got status update for unknown executor app-20220302074713-0005/0
+22/03/02 07:48:04 INFO Master: Registering app finalProject-sp
+22/03/02 07:48:04 INFO Master: Registered app finalProject-sp with ID app-20220302074804-0006
+22/03/02 07:48:04 INFO Master: Launching executor app-20220302074804-0006/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:48:14 INFO Master: Received unregister request from application app-20220302074804-0006
+22/03/02 07:48:14 INFO Master: Removing app app-20220302074804-0006
+22/03/02 07:48:14 INFO Master: 127.0.0.1:51812 got disassociated, removing it.
+22/03/02 07:48:14 INFO Master: 10.0.2.100:45123 got disassociated, removing it.
+22/03/02 07:48:14 WARN Master: Got status update for unknown executor app-20220302074804-0006/0
+22/03/02 07:49:07 INFO Master: Registering app finalProject-sp-af
+22/03/02 07:49:07 INFO Master: Registered app finalProject-sp-af with ID app-20220302074907-0007
+22/03/02 07:49:07 INFO Master: Launching executor app-20220302074907-0007/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:49:17 INFO Master: Received unregister request from application app-20220302074907-0007
+22/03/02 07:49:17 INFO Master: Removing app app-20220302074907-0007
+22/03/02 07:49:17 INFO Master: 127.0.0.1:51814 got disassociated, removing it.
+22/03/02 07:49:17 INFO Master: 10.0.2.100:39139 got disassociated, removing it.
+22/03/02 07:49:17 WARN Master: Got status update for unknown executor app-20220302074907-0007/0
+22/03/02 07:49:58 INFO Master: Registering app finalProject-sp-af
+22/03/02 07:49:58 INFO Master: Registered app finalProject-sp-af with ID app-20220302074958-0008
+22/03/02 07:49:58 INFO Master: Launching executor app-20220302074958-0008/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:50:00 INFO Master: Received unregister request from application app-20220302074958-0008
+22/03/02 07:50:00 INFO Master: Removing app app-20220302074958-0008
+22/03/02 07:50:00 INFO Master: 127.0.0.1:51816 got disassociated, removing it.
+22/03/02 07:50:00 INFO Master: 10.0.2.100:42027 got disassociated, removing it.
+22/03/02 07:50:00 WARN Master: Got status update for unknown executor app-20220302074958-0008/0
+22/03/02 07:50:57 INFO Master: Registering app finalProject-sp-af
+22/03/02 07:50:57 INFO Master: Registered app finalProject-sp-af with ID app-20220302075057-0009
+22/03/02 07:50:57 INFO Master: Launching executor app-20220302075057-0009/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:50:59 INFO Master: Received unregister request from application app-20220302075057-0009
+22/03/02 07:50:59 INFO Master: Removing app app-20220302075057-0009
+22/03/02 07:50:59 INFO Master: 127.0.0.1:51818 got disassociated, removing it.
+22/03/02 07:50:59 INFO Master: 10.0.2.100:45773 got disassociated, removing it.
+22/03/02 07:50:59 WARN Master: Got status update for unknown executor app-20220302075057-0009/0
+22/03/02 07:51:38 INFO Master: Registering app finalProject-sp-af
+22/03/02 07:51:38 INFO Master: Registered app finalProject-sp-af with ID app-20220302075138-0010
+22/03/02 07:51:38 INFO Master: Launching executor app-20220302075138-0010/0 on worker worker-20220302070414-10.0.2.100-36917
+22/03/02 07:51:49 INFO Master: Received unregister request from application app-20220302075138-0010
+22/03/02 07:51:49 INFO Master: Removing app app-20220302075138-0010
+22/03/02 07:51:49 INFO Master: 127.0.0.1:51820 got disassociated, removing it.
+22/03/02 07:51:49 INFO Master: 10.0.2.100:43379 got disassociated, removing it.
+22/03/02 07:51:49 WARN Master: Got status update for unknown executor app-20220302075138-0010/0

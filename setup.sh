@@ -23,7 +23,3 @@ airflow users create \
     --lastname Parker \
     --email anhptvhe150038@fpt.edu.vn
 # start the web server, default port is 8080
-airflow webserver --port 8088 -D
-
-# start scheduler
-airflow scheduler
