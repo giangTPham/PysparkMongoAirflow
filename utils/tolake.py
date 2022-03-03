@@ -3,10 +3,12 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from pyspark.sql import SparkSession, Window
 
-if __name__ == '__main__':
+import click
+import sys
+
+def main():
     spark = SparkSession.builder.master("local[1]").appName("finalProject-sp-af").getOrCreate()
-    date = '2021-11-01'
-    # date = input("enter date: ")
+    date = sys.argv[1]
     source = "/workspace/PysparkMongoAirflow/Final_Project/data/"
 
     promotion = spark.read.option("header", True).option("inferSchema", True).option("delimiter", '\t') \
@@ -23,3 +25,8 @@ if __name__ == '__main__':
     user.write.format("parquet").mode('overwrite') \
                 .save(source+"datalake/"+date+"/user")
     spark.stop()
+
+
+
+if __name__ == '__main__':
+    main()

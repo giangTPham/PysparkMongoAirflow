@@ -4,14 +4,14 @@ from pyspark.sql.types import *
 from datetime import datetime
 from pyspark.sql import SparkSession, Window
 
-spark = SparkSession.builder.\
+spark = SparkSession.builder.master("local[1]").\
         appName("pyspark-notebook2").\
         config("spark.mongodb.input.uri","mongodb://admin:admin@127.0.0.1:27017/test.demographic").\
         config("spark.mongodb.output.uri","mongodb://admin:admin@127.0.0.1:27017/test.demographic").\
         config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.12:3.0.1").\
         getOrCreate()
 
-date = '2021-11-01'
+date = sys.argv[1]
 # date = input("enter date: ")
 des_user = "/workspace/PysparkMongoAirflow/Final_Project/data/datalake/"+date+"/user/*.parquet"
 
