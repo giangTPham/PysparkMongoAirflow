@@ -13,7 +13,7 @@ def updateToDB(date):
         getOrCreate()
     transaction = spark.read.option("header", True)\
                 .option("inferSchema", True)\
-                .parquet('Final_Project/data/datalake/'+date+'/transaction/*.parquet')
+                .parquet('/workspace/PysparkMongoAirflow/Final_Project/data/datalake/'+date+'/transaction/*.parquet')
     transaction = transaction.filter(transaction['transStatus'] == 1)
     transaction = transaction.withColumn('transactionTime', to_timestamp('transactionTime'))
     transaction = transaction.select('userId', 'transactionTime', 'appId', 'transType', 'amount', 'pmcId')
@@ -54,7 +54,7 @@ def updateToDB(date):
     if transaction_activities.first()['modifiedDate'] <= full_activities.first()['modifiedDate']:
         print("Bye")
         return
-    spark.stop()
+    
 
     combination = full_activities.union(transaction_activities).cache()
     window_combine = Window.partitionBy('userId').orderBy("lastActiveTransactionType").rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
@@ -74,6 +74,8 @@ def updateToDB(date):
     .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
     .option("database", 'test').mode("overwrite")\
     .option("collection", "activities").save()
+
+    spark.stop()
 
 if __name__ == '__main__':
     date = '2021-11-01'
