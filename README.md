@@ -5,6 +5,12 @@ Learn how to use Airflow to schedule and run Spark jobs.
 We will be using [Gitpod](https://www.gitpod.io/) as our dev environment so that you can quickly learn and test without having to worry about OS inconsistencies. If you have not already opened this in gitpod, then `CTR + Click` the button below and get started! <br></br>
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/giangTPham/PysparkMongoAirflow) 
 
+After setting up gitpod, setting the Environment variables `SPARK_HOME` by using the instruction right [Here](https://www.gitpod.io/docs/environment-variables)
+
+```bash
+SPARK_HOME = /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7
+```
+
 ## 1. Set up Airflow and MongoDB
 
 ### 1.1 - Start Airflow
