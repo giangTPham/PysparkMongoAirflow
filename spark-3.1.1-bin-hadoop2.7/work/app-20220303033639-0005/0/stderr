@@ -1,0 +1,93 @@
+Spark Executor Command: "/home/gitpod/.sdkman/candidates/java/current/bin/java" "-cp" "/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/conf/:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/*" "-Xmx1024M" "-Dspark.driver.port=39665" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.0.2.100:39665" "--executor-id" "0" "--hostname" "10.0.2.100" "--cores" "1" "--app-id" "app-20220303033639-0005" "--worker-url" "spark://Worker@10.0.2.100:46045"
+========================================
+
+Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/03/03 03:36:41 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 25495@giangtpham-pysparkmongoa-vh7eh0mck9l
+22/03/03 03:36:41 INFO SignalUtils: Registering signal handler for TERM
+22/03/03 03:36:41 INFO SignalUtils: Registering signal handler for HUP
+22/03/03 03:36:41 INFO SignalUtils: Registering signal handler for INT
+22/03/03 03:36:41 WARN Utils: Your hostname, giangtpham-pysparkmongoa-vh7eh0mck9l resolves to a loopback address: 127.0.0.1; using 10.0.2.100 instead (on interface tap0)
+22/03/03 03:36:41 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+22/03/03 03:36:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/03/03 03:36:42 INFO SecurityManager: Changing view acls to: gitpod
+22/03/03 03:36:42 INFO SecurityManager: Changing modify acls to: gitpod
+22/03/03 03:36:42 INFO SecurityManager: Changing view acls groups to: 
+22/03/03 03:36:42 INFO SecurityManager: Changing modify acls groups to: 
+22/03/03 03:36:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gitpod); groups with view permissions: Set(); users  with modify permissions: Set(gitpod); groups with modify permissions: Set()
+22/03/03 03:36:43 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:39665 after 126 ms (0 ms spent in bootstraps)
+22/03/03 03:36:43 INFO SecurityManager: Changing view acls to: gitpod
+22/03/03 03:36:43 INFO SecurityManager: Changing modify acls to: gitpod
+22/03/03 03:36:43 INFO SecurityManager: Changing view acls groups to: 
+22/03/03 03:36:43 INFO SecurityManager: Changing modify acls groups to: 
+22/03/03 03:36:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gitpod); groups with view permissions: Set(); users  with modify permissions: Set(gitpod); groups with modify permissions: Set()
+22/03/03 03:36:43 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:39665 after 6 ms (0 ms spent in bootstraps)
+22/03/03 03:36:43 INFO DiskBlockManager: Created local directory at /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/blockmgr-c1258966-72a9-403d-8cf4-12bd0b2cef8c
+22/03/03 03:36:43 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+22/03/03 03:36:43 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.0.2.100:39665
+22/03/03 03:36:43 INFO WorkerWatcher: Connecting to worker spark://Worker@10.0.2.100:46045
+22/03/03 03:36:43 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:46045 after 2 ms (0 ms spent in bootstraps)
+22/03/03 03:36:43 INFO WorkerWatcher: Successfully connected to spark://Worker@10.0.2.100:46045
+22/03/03 03:36:43 INFO ResourceUtils: ==============================================================
+22/03/03 03:36:43 INFO ResourceUtils: No custom resources configured for spark.executor.
+22/03/03 03:36:43 INFO ResourceUtils: ==============================================================
+22/03/03 03:36:43 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+22/03/03 03:36:43 INFO Executor: Starting executor ID 0 on host 10.0.2.100
+22/03/03 03:36:44 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41951.
+22/03/03 03:36:44 INFO NettyBlockTransferService: Server created on 10.0.2.100:41951
+22/03/03 03:36:44 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/03/03 03:36:44 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.0.2.100, 41951, None)
+22/03/03 03:36:44 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.0.2.100, 41951, None)
+22/03/03 03:36:44 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.0.2.100, 41951, None)
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/files/org.mongodb_mongodb-driver-sync-4.0.5.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:39665 after 2 ms (0 ms spent in bootstraps)
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/files/org.mongodb_mongodb-driver-sync-4.0.5.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp14932937428718434229.tmp
+22/03/03 03:36:44 INFO Utils: Copying /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/-19389744021646278597649_cache to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_mongodb-driver-sync-4.0.5.jar
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/files/org.mongodb_bson-4.0.5.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/files/org.mongodb_bson-4.0.5.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp12069655721392345098.tmp
+22/03/03 03:36:44 INFO Utils: Copying /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/-8065610391646278597649_cache to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_bson-4.0.5.jar
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/files/org.mongodb_mongodb-driver-core-4.0.5.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/files/org.mongodb_mongodb-driver-core-4.0.5.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp10351495488491856710.tmp
+22/03/03 03:36:44 INFO Utils: Copying /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/17114545301646278597649_cache to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_mongodb-driver-core-4.0.5.jar
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/files/org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/files/org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp6663619884273332379.tmp
+22/03/03 03:36:44 INFO Utils: Copying /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/20748696051646278597649_cache to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/jars/org.mongodb_mongodb-driver-sync-4.0.5.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/jars/org.mongodb_mongodb-driver-sync-4.0.5.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp12676843354379054247.tmp
+22/03/03 03:36:44 INFO Utils: /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/-10296064551646278597649_cache has been previously copied to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_mongodb-driver-sync-4.0.5.jar
+22/03/03 03:36:44 INFO Executor: Adding file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_mongodb-driver-sync-4.0.5.jar to class loader
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/jars/org.mongodb_bson-4.0.5.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/jars/org.mongodb_bson-4.0.5.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp10289425643766549996.tmp
+22/03/03 03:36:44 INFO Utils: /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/-5642250821646278597649_cache has been previously copied to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_bson-4.0.5.jar
+22/03/03 03:36:44 INFO Executor: Adding file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_bson-4.0.5.jar to class loader
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/jars/org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/jars/org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp2318396822872266916.tmp
+22/03/03 03:36:44 INFO Utils: /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/-13176097981646278597649_cache has been previously copied to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar
+22/03/03 03:36:44 INFO Executor: Adding file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb.spark_mongo-spark-connector_2.12-3.0.1.jar to class loader
+22/03/03 03:36:44 INFO Executor: Fetching spark://10.0.2.100:39665/jars/org.mongodb_mongodb-driver-core-4.0.5.jar with timestamp 1646278597649
+22/03/03 03:36:44 INFO Utils: Fetching spark://10.0.2.100:39665/jars/org.mongodb_mongodb-driver-core-4.0.5.jar to /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/fetchFileTemp17599937184221783600.tmp
+22/03/03 03:36:44 INFO Utils: /tmp/spark-607f79ef-0eac-49e4-92b9-28a43f618e52/executor-4fd687ca-3742-4b2c-b2bc-f1680f95f3b5/spark-90e8b8d0-daa6-4830-b755-1476dec2bc48/-16741448191646278597649_cache has been previously copied to /workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_mongodb-driver-core-4.0.5.jar
+22/03/03 03:36:44 INFO Executor: Adding file:/workspace/PysparkMongoAirflow/spark-3.1.1-bin-hadoop2.7/work/app-20220303033639-0005/0/./org.mongodb_mongodb-driver-core-4.0.5.jar to class loader
+22/03/03 03:36:44 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+22/03/03 03:36:44 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/03/03 03:36:44 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+22/03/03 03:36:44 INFO TransportClientFactory: Successfully created connection to /10.0.2.100:39771 after 10 ms (0 ms spent in bootstraps)
+22/03/03 03:36:44 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 27.2 KiB, free 434.4 MiB)
+22/03/03 03:36:44 INFO TorrentBroadcast: Reading broadcast variable 0 took 192 ms
+22/03/03 03:36:44 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 75.6 KiB, free 434.3 MiB)
+22/03/03 03:36:45 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1903 bytes result sent to driver
+22/03/03 03:36:47 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+22/03/03 03:36:47 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+22/03/03 03:36:47 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+22/03/03 03:36:47 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 27.2 KiB, free 434.4 MiB)
+22/03/03 03:36:47 INFO TorrentBroadcast: Reading broadcast variable 1 took 12 ms
+22/03/03 03:36:47 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 75.6 KiB, free 434.3 MiB)
+22/03/03 03:36:47 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1789 bytes result sent to driver
+22/03/03 03:36:48 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+22/03/03 03:36:48 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

@@ -11,7 +11,7 @@ spark = SparkSession.builder.\
         config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.12:3.0.1").\
         getOrCreate()
 
-date = '2021-11-02'
+date = '2021-11-01'
 # date = input("enter date: ")
 des_user = "/workspace/PysparkMongoAirflow/Final_Project/data/datalake/"+date+"/user/*.parquet"
 
