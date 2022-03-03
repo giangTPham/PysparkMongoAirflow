@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession, Window, DataFrame
 from functools import reduce
 
 def updateToDB(date):
-    spark = SparkSession.builder.\
+    spark = SparkSession.builder.master("local[1]").\
         appName("activity").\
         config("spark.mongodb.input.uri","mongodb://admin:admin@127.0.0.1:27017/test.activities").\
         config("spark.mongodb.output.uri","mongodb://admin:admin@127.0.0.1:27017/test.activities").\
@@ -78,5 +78,5 @@ def updateToDB(date):
     spark.stop()
 
 if __name__ == '__main__':
-    date = '2021-11-01'
+    date = sys.argv[1]
     updateToDB(date)

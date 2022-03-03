@@ -6,7 +6,7 @@ from pyspark.sql import SparkSession, Window
 import logging
 
 def updateToDB(date):
-    spark = SparkSession.builder.\
+    spark = SparkSession.builder.master("local[1]").\
         appName("promotion").\
         config("spark.mongodb.input.uri","mongodb://admin:admin@127.0.0.1:27017/test.promotions").\
         config("spark.mongodb.output.uri","mongodb://admin:admin@127.0.0.1:27017/test.promotions").\
@@ -59,5 +59,5 @@ def updateToDB(date):
 
 
 if __name__ == '__main__':
-    date = '2021-11-01'
+    date = sys.argv[1]
     updateToDB(date)
