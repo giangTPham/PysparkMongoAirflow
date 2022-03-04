@@ -51,9 +51,22 @@ def updateToDB(date):
                         .withColumn('lastPaymentDate', col('lastPaymentDate').cast('date'))\
                         .withColumn('modifiedDate', col('modifiedDate').cast('date')).cache()
     
-    if transaction_activities.first()['modifiedDate'] <= full_activities.first()['modifiedDate']:
-        print("Bye")
-        return
+    # if transaction_activities.first()['modifiedDate'] <= full_activities.first()['modifiedDate']:
+    #     print("Bye")
+    #     return
+
+    # filter from full_activities the user_id with modifiedDate greater than date
+    from datetime import datetime
+    date = datetime.strptime(date, "%Y-%m-%d").date()
+    no_update_user = full_activities.filter(col("modifiedDate") > date).select('userId').cache()
+    # filter it out of the transaction_activities
+    if no_update_user.count() != 0:
+        transaction_activities = transaction_activities.join(no_update_user, ['userId'], 'leftanti').cache()
+
+
+    # continue
+
+    
     
 
     combination = full_activities.union(transaction_activities).cache()
