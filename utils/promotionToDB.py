@@ -64,7 +64,7 @@ def updateToDB(date):
     # op2 = df_final.filter(df_final['check_voucher'] == 'expired')
 
     #question 3
-    # op3 = df_final.filter((df_final['campaignID'] == 1008) & (df_final['check_voucher'] == 'expired'))
+    # op3 = df_final.filter((df_final['campaignID'] == 1008) & (df_final['check_voucher'] == 'not_expire'))
 
     df_final.write.format("mongo")\
         .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
