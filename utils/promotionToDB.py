@@ -18,7 +18,11 @@ def time(campaignType, time_use, days, expireTime, expire_date):
         
     elif (campaignType == 2):
         if (time_use + relativedelta(days=days)) < expire_date:
-            return 'not_expire'
+            real_expire_date = time_use + relativedelta(days=days)
+            if (real_expire_date < datetime.now()):
+                return 'expired'
+            else:
+                return 'not_expire'
         else:
             if (expire_date < datetime.now()):
                 return 'expired'
@@ -48,7 +52,11 @@ def updateToDB(date):
     # user_promo = data.filter(data['campaignID'] == 1000).select(data['userid'])
     # user_promo.show()
 
-    data1 = data.filter(data['status'] == "GIVEN")
+    window_status = Window.partitionBy("userid","voucherCode","campaignID").orderBy('status')\
+        .rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
+    data1 = data.withColumn("final_status", last('status').over(window_status))
+    data1 = data1.filter(col("status") == col("final_status"))
+    data1 = data1.drop(data1['final_status'])
 
     df = data1.withColumn("expire_date",to_timestamp("expireDate"))\
         .drop(data1['expireDate']) \
@@ -65,14 +73,15 @@ def updateToDB(date):
 
     #question 3
     # op3 = df_final.filter((df_final['campaignID'] == 1008) & (df_final['check_voucher'] == 'not_expire'))
-
-    df_final.write.format("mongo")\
-        .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-        .option("database", 'test').mode("overwrite")\
-        .option("collection", "promotions").save()
+    
+    # Lose data from previous day  overwrite => append
+    # df_final.write.format("mongo")\
+    #     .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
+    #     .option("database", 'test').mode("append")\
+    #     .option("collection", "promotions").save()
 
     windowSpec  = Window.partitionBy("userid").orderBy(col('time_use').desc())
-    data_up = df_final.withColumn('row', row_number().over(windowSpec)).filter(col("row") == 1) \
+    data_up = df_final\
             .select('userid', 'voucherCode', 'status', 'campaignID', 'campaignType', 'expire_date', 'expireTime', 'time_use', 'days', 'check_voucher').orderBy('userid') \
             .cache()
 
@@ -94,7 +103,14 @@ def updateToDB(date):
     else: 
         data_db = data_db.select('userid', 'voucherCode', 'status', 'campaignID', 'campaignType', 'expire_date', 'expireTime', 'time_use', 'days', 'check_voucher').cache()
         all_data = data_up.unionAll(data_db).cache()
-        final_result =all_data.withColumn('row', row_number().over(windowSpec)).filter(col("row") == 1) \
+        window_status = Window.partitionBy("userid","voucherCode","campaignID").orderBy('status').rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
+        all_data = all_data.withColumn("final_status", last('status').over(window_status))
+        all_data = all_data.filter(col("status") == col("final_status"))
+        all_data = all_data.drop(all_data['final_status'])
+        all_data = all_data.drop_duplicates().cache()
+
+
+        final_result =all_data\
             .select('userid', 'voucherCode', 'status', 'campaignID', 'campaignType', 'expire_date', 'expireTime', 'time_use', 'days', 'check_voucher').orderBy('userid') \
             .cache()
         print(final_result.count())
@@ -103,6 +119,7 @@ def updateToDB(date):
         .option("database", 'test').mode("overwrite")\
         .option("collection", "promotions").save()
     
+        final_result.show()
     spark.stop()
 
 
