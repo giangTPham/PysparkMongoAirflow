@@ -33,14 +33,34 @@ def updateToDB(date):
     transaction_activities = transaction_activities.join(paymentPmc, 'userId', 'outer')
     transaction_activities = transaction_activities.select('userId', 'firstPaymentDate','lastPaymentDate', 'firstActiveDate',\
         'lastActiveDate', 'appIds', 'lastActiveTransactionType', 'lastPayAppId', 'payPmcIds', 'modifiedDate').dropDuplicates() 
+
+    userIds = str([int(row.userId) for row in transaction_activities.select("userId").collect()])
+    pipeline = "{$match: {'userId': {$in:" + userIds + "}}}"
+
+    schema_for_read = StructType([
+        StructField("userId", IntegerType()),
+        StructField("firstPaymentDate", TimestampType()),
+        StructField("lastPaymentDate", TimestampType()),
+        StructField("firstActiveDate", TimestampType()),
+        StructField("lastActiveDate", TimestampType()),
+        StructField("appIds", ArrayType(IntegerType())),
+        StructField("lastActiveTransactionType", IntegerType()),
+        StructField("lastPayAppId", IntegerType()),
+        StructField("payPmcIds", ArrayType(IntegerType())),
+        StructField("modifiedDate", TimestampType())
+    ])
+    
     full_activities = spark.read\
+        .option("pipeline", pipeline)\
+        .schema(schema_for_read)\
         .format("mongo")\
         .load()
+
     database_count = full_activities.count()
     if database_count == 0:
-        transaction_activities.write.format("mongo")\
+        transaction_activities.withColumn("_id", col('userId')).write.format("mongo")\
             .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-            .option("database", 'test').mode("overwrite")\
+            .option("database", 'test').mode("append")\
             .option("collection", "activities").save()
         return
     full_activities = full_activities.select('userId', 'firstPaymentDate','lastPaymentDate', 'firstActiveDate',\
@@ -50,10 +70,6 @@ def updateToDB(date):
                         .withColumn('lastActiveDate', col('lastActiveDate').cast('date'))\
                         .withColumn('lastPaymentDate', col('lastPaymentDate').cast('date'))\
                         .withColumn('modifiedDate', col('modifiedDate').cast('date')).cache()
-    
-    # if transaction_activities.first()['modifiedDate'] <= full_activities.first()['modifiedDate']:
-    #     print("Bye")
-    #     return
 
     # filter from full_activities the user_id with modifiedDate greater than date
     from datetime import datetime
@@ -65,10 +81,6 @@ def updateToDB(date):
 
 
     # continue
-
-    
-    
-
     combination = full_activities.union(transaction_activities).cache()
     window_combine = Window.partitionBy('userId').orderBy("lastActiveTransactionType").rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
     combination = combination.withColumn('lastActiveTransactionType', last('lastActiveTransactionType', True).over(window_combine))\
@@ -78,14 +90,15 @@ def updateToDB(date):
                                             ,max('lastPaymentDate').alias('lastPaymentDate')\
                                             ,min('firstActiveDate').alias('firstActiveDate')\
                                             ,max('lastActiveDate').alias('lastActiveDate')\
-                                            ,flatten(collect_set('appIds')).alias('appIds')
+                                            ,flatten(collect_set('appIds')).alias('appIds')\
                                             ,first('lastActiveTransactionType').alias('lastActiveTransactionType')\
                                             ,first('lastPayAppId').alias('lastPayAppId')\
                                             ,flatten(collect_set('payPmcIds')).alias('payPmcIds')\
                                             ,max('modifiedDate').alias('modifiedDate')).cache()
+    combination = combination.withColumn("_id", col("userId")).cache()
     combination.write.format("mongo")\
     .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-    .option("database", 'test').mode("overwrite")\
+    .option("database", 'test').mode("append")\
     .option("collection", "activities").save()
 
     spark.stop()
