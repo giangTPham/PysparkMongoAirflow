@@ -22,17 +22,21 @@ windowSpec  = Window.partitionBy("userid").orderBy(col('updated_time').desc())
 data = users.withColumn('row', row_number().over(windowSpec)).filter(col("row") == 1) \
             .select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').orderBy('userid') \
             .cache()
+
+userIds = str([int(row.userid) for row in data.select("userid").collect()])
+pipeline = "{$match: {'userid': {$in:" + userIds + "}}}"
 users_db = spark.read.format("com.mongodb.spark.sql.DefaultSource") \
         .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
+        .option("pipeline", pipeline)\
         .option("database", 'test') \
         .option("collection", "demographic") \
         .load().cache()
 database_count = users_db.count()
 if database_count == 0:
         print('count = 0')
-        data.write.format("mongo")\
+        data.withColumn("_id", col("userid")).write.format("mongo")\
             .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-            .option("database", 'test').mode("overwrite")\
+            .option("database", 'test').mode("append")\
             .option("collection", "demographic").save()
 else: 
         users_db = users_db.select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').cache()
@@ -41,8 +45,8 @@ else:
             .select('userid', 'dob', 'profileLevel', 'gender', 'updated_time').orderBy('userid') \
             .cache()
         print(final_result.count())
-        final_result.write.format("mongo")\
+        final_result.withColumn("_id", col("userid")).write.format("mongo")\
         .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-        .option("database", 'test').mode("overwrite")\
+        .option("database", 'test').mode("append")\
         .option("collection", "demographic").save()
 spark.stop()

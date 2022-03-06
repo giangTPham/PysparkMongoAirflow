@@ -85,8 +85,12 @@ def updateToDB(date):
             .select('userid', 'voucherCode', 'status', 'campaignID', 'campaignType', 'expire_date', 'expireTime', 'time_use', 'days', 'check_voucher').orderBy('userid') \
             .cache()
 
+    ids = str([(str(row.userid) + str(row.voucherCode) + str(row.campaignID)) for row in data_up.select("userid","voucherCode","campaignID").collect()]) 
+    pipeline = "{$match: {'_id': {$in:" + ids + "}}}"
+
     data_db = spark.read\
         .format("mongo")\
+        .option("pipeline", pipeline)\
         .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
         .option("database", 'test') \
         .option("collection", "promotions") \
@@ -96,9 +100,10 @@ def updateToDB(date):
 
     if database_count == 0:
         print('count = 0')
+        data_up = data_up.withColumn("_id", concat(col('userid').cast("string"),col('voucherCode').cast("string"),col('campaignID').cast("string")))
         data_up.write.format("mongo")\
             .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-            .option("database", 'test').mode("overwrite")\
+            .option("database", 'test').mode("append")\
             .option("collection", "promotions").save()
     else: 
         data_db = data_db.select('userid', 'voucherCode', 'status', 'campaignID', 'campaignType', 'expire_date', 'expireTime', 'time_use', 'days', 'check_voucher').cache()
@@ -114,12 +119,11 @@ def updateToDB(date):
             .select('userid', 'voucherCode', 'status', 'campaignID', 'campaignType', 'expire_date', 'expireTime', 'time_use', 'days', 'check_voucher').orderBy('userid') \
             .cache()
         print(final_result.count())
+        final_result = final_result.withColumn("_id", concat(col('userid').cast("string"),col('voucherCode').cast("string"),col('campaignID').cast("string"))).cache()
         final_result.write.format("mongo")\
         .option("uri","mongodb://admin:admin@127.0.0.1:27017/test")\
-        .option("database", 'test').mode("overwrite")\
+        .option("database", 'test').mode("append")\
         .option("collection", "promotions").save()
-    
-        final_result.show()
     spark.stop()
 
 
